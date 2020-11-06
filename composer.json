@@ -1,5 +1,5 @@
 {
-    "name": "canoe-resources/sentinel",
+    "name": "cartalyst/sentinel",
     "description": "PHP 7.2+ Fully-featured Authentication & Authorization System",
     "keywords": [
         "php",
