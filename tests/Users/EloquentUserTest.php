@@ -20,18 +20,18 @@
 
 namespace Cartalyst\Sentinel\Tests\Users;
 
+use Cartalyst\Sentinel\Roles\RoleInterface;
+use Cartalyst\Sentinel\Users\EloquentUser;
+use Illuminate\Database\Connection;
+use Illuminate\Database\ConnectionResolverInterface;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Query\Grammars\Grammar;
+use Illuminate\Database\Query\Processors\Processor;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use Illuminate\Database\Connection;
-use Illuminate\Database\Query\Builder;
-use Cartalyst\Sentinel\Users\EloquentUser;
-use Cartalyst\Sentinel\Roles\RoleInterface;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Query\Grammars\Grammar;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Query\Processors\Processor;
-use Illuminate\Database\ConnectionResolverInterface;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class EloquentUserTest extends TestCase
 {
@@ -146,7 +146,7 @@ class EloquentUserTest extends TestCase
 
         $this->user->save();
 
-        $this->assertSame(1, $this->user->getUserId());
+        $this->assertSame('1', $this->user->getUserId());
     }
 
     /** @test */

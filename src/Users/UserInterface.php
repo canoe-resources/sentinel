@@ -25,9 +25,9 @@ interface UserInterface
     /**
      * Returns the user primary key.
      *
-     * @return int
+     * @return string
      */
-    public function getUserId(): int;
+    public function getUserId(): string;
 
     /**
      * Returns the user login.

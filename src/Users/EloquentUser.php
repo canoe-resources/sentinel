@@ -20,22 +20,22 @@
 
 namespace Cartalyst\Sentinel\Users;
 
-use IteratorAggregate;
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
-use Cartalyst\Sentinel\Roles\EloquentRole;
-use Cartalyst\Sentinel\Roles\RoleInterface;
-use Cartalyst\Sentinel\Roles\RoleableInterface;
-use Cartalyst\Sentinel\Reminders\EloquentReminder;
-use Cartalyst\Sentinel\Throttling\EloquentThrottle;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Cartalyst\Sentinel\Permissions\PermissibleTrait;
 use Cartalyst\Sentinel\Activations\EloquentActivation;
 use Cartalyst\Sentinel\Permissions\PermissibleInterface;
+use Cartalyst\Sentinel\Permissions\PermissibleTrait;
 use Cartalyst\Sentinel\Permissions\PermissionsInterface;
 use Cartalyst\Sentinel\Persistences\EloquentPersistence;
 use Cartalyst\Sentinel\Persistences\PersistableInterface;
+use Cartalyst\Sentinel\Reminders\EloquentReminder;
+use Cartalyst\Sentinel\Roles\EloquentRole;
+use Cartalyst\Sentinel\Roles\RoleableInterface;
+use Cartalyst\Sentinel\Roles\RoleInterface;
+use Cartalyst\Sentinel\Throttling\EloquentThrottle;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
+use IteratorAggregate;
 
 class EloquentUser extends Model implements PermissibleInterface, PersistableInterface, RoleableInterface, UserInterface
 {
@@ -246,7 +246,7 @@ class EloquentUser extends Model implements PermissibleInterface, PersistableInt
     /**
      * {@inheritdoc}
      */
-    public function getUserId(): int
+    public function getUserId(): string
     {
         return $this->getKey();
     }
