@@ -20,13 +20,13 @@
 
 namespace Cartalyst\Sentinel\Users;
 
-use Closure;
 use Carbon\Carbon;
-use InvalidArgumentException;
-use Cartalyst\Support\Traits\EventTrait;
-use Illuminate\Contracts\Events\Dispatcher;
-use Cartalyst\Support\Traits\RepositoryTrait;
 use Cartalyst\Sentinel\Hashing\HasherInterface;
+use Cartalyst\Support\Traits\EventTrait;
+use Cartalyst\Support\Traits\RepositoryTrait;
+use Closure;
+use Illuminate\Contracts\Events\Dispatcher;
+use InvalidArgumentException;
 
 class IlluminateUserRepository implements UserRepositoryInterface
 {
@@ -67,7 +67,7 @@ class IlluminateUserRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function findById(int $id): ?UserInterface
+    public function findById(string $id): ?UserInterface
     {
         return $this->createModel()->newQuery()->find($id);
     }
@@ -319,14 +319,14 @@ class IlluminateUserRepository implements UserRepositoryInterface
     /**
      * Validates the user.
      *
-     * @param array $credentials
-     * @param int   $id
+     * @param array     $credentials
+     * @param string    $id
      *
      * @throws \InvalidArgumentException
      *
      * @return bool
      */
-    protected function validateUser(array $credentials, int $id = null): bool
+    protected function validateUser(array $credentials, string $id = null): bool
     {
         $instance = $this->createModel();
 

@@ -25,11 +25,11 @@ interface RoleRepositoryInterface
     /**
      * Finds a role by the given primary key.
      *
-     * @param int $id
+     * @param string $id
      *
      * @return \Cartalyst\Sentinel\Roles\RoleInterface|null
      */
-    public function findById(int $id): ?RoleInterface;
+    public function findById(string $id): ?RoleInterface;
 
     /**
      * Finds a role by the given slug.

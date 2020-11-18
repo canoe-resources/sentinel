@@ -48,7 +48,7 @@ class IlluminateRoleRepository implements RoleRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function findById(int $id): ?RoleInterface
+    public function findById(string $id): ?RoleInterface
     {
         return $this->createModel()->newQuery()->find($id);
     }
